@@ -29,7 +29,6 @@
 </template>
 
 <script>
-// import { loginUser } from '@/api/index';
 import { validateEmail } from '@/utils/validation';
 
 export default {
@@ -55,8 +54,7 @@ export default {
           username: this.username,
           password: this.password,
         };
-        const data = await this.$store.dispatch('LOGIN', userData);
-        console.log("LOGIN's data", data);
+        await this.$store.dispatch('LOGIN', userData);
         this.$router.push('/main');
       } catch (error) {
         // 에러 핸들링할 코드

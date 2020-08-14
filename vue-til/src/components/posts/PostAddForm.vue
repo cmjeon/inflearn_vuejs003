@@ -9,9 +9,12 @@
         </div>
         <div>
           <label for="contents">Contents:</label>
-          <textarea id="contents" type="text" row="5" v-model="contents" />
-          <p v-if="!isContensVaild" class="validation-text warning">
-            Contensts length must be less than 200
+          <textarea id="contents" type="text" rows="5" v-model="contents" />
+          <p
+            v-if="!isContentsValid"
+            class="validation-text warning isContentTooLong"
+          >
+            Contents length must be less than 250
           </p>
         </div>
         <button type="submit" class="btn">Create</button>
@@ -25,6 +28,7 @@
 
 <script>
 import { createPost } from '@/api/index';
+
 export default {
   data() {
     return {
@@ -34,7 +38,7 @@ export default {
     };
   },
   computed: {
-    isContensVaild() {
+    isContentsValid() {
       return this.contents.length <= 200;
     },
   },
