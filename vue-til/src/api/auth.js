@@ -1,4 +1,4 @@
-// 로그인, 회원가입, 회원탈퇴 등 사용자 계정관련 API
+// 로그인, 회원 가입, (ex) 회원 탈퇴
 import { instance } from './index';
 
 // 회원가입 API
