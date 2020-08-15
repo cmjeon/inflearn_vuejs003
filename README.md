@@ -366,3 +366,5 @@ import Demo from '@/demo/basic/Demo';
 15
 # 학습 노트 데이터 수정
 16
+# 데이터 포맷팅
+17

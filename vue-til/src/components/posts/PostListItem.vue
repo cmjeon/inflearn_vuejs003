@@ -33,7 +33,7 @@ export default {
       // console.log('deleted');
     },
     routeEditPage() {
-      this.$router.push('post/${id}');
+      this.$router.push('/post/5f32a85eb9489d387477988d');
     },
   },
 };
