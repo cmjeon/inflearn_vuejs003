@@ -362,3 +362,7 @@ import Demo from '@/demo/basic/Demo';
 13
 # API 함수 모듈화
 14
+# 학습 노트 데이터 삭제
+15
+# 학습 노트 데이터 수정
+16
