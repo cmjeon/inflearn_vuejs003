@@ -16,6 +16,7 @@
 
 <script>
 import { deletePost } from '@/api/posts';
+
 export default {
   props: {
     postItem: {
@@ -29,7 +30,7 @@ export default {
         await deletePost(this.postItem._id);
         this.$emit('refresh');
       }
-      console.log('delete');
+      // console.log('deleted');
     },
   },
 };
