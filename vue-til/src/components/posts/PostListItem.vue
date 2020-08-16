@@ -24,11 +24,11 @@ export default {
       required: true,
     },
   },
-  filters: {
-    formatDate(value) {
-      return new Date(value);
-    },
-  },
+  // filters: {
+  //   formatDate(value) {
+  //     return new Date(value);
+  //   },
+  // },
   methods: {
     async deleteItem() {
       if (confirm('You want to delete it?')) {
