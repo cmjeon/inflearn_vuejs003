@@ -28,6 +28,7 @@
 
 <script>
 import { fetchPost, editPost } from '@/api/posts';
+
 export default {
   data() {
     return {
@@ -40,13 +41,6 @@ export default {
     isContentsValid() {
       return this.contents.length <= 200;
     },
-  },
-  async created() {
-    const id = this.$route.params.id;
-    const { data } = await fetchPost(id);
-    this.title = data.title;
-    this.contents = data.contents;
-    console.log(data);
   },
   methods: {
     async submitForm() {
@@ -63,10 +57,16 @@ export default {
       }
     },
   },
+  async created() {
+    const id = this.$route.params.id;
+    const { data } = await fetchPost(id);
+    this.title = data.title;
+    this.contents = data.contents;
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .form-wrapper .form {
   width: 100%;
 }
