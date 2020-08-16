@@ -1,10 +1,10 @@
-import { sum } from './math';
+import Vue from 'vue';
+import LoginForm from './LoginForm.vue';
 
-sum(10, 20); //
-
-describe('math.js', () => {
-  test('10 + 20 = 30', () => {
-    // const result = ;
-    expect(sum(10, 20)).not.toBe(15);
+describe('LoginForm.vue', () => {
+  test('컴포넌트가 마운트되면 화면에 그려져야 한다.', () => {
+    const instance = new Vue(LoginForm).$mount();
+    // console.log(instance);
+    expect(instance.username).toBe('');
   });
 });
