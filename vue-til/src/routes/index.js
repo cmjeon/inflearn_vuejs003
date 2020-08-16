@@ -23,14 +23,17 @@ const router = new VueRouter({
     {
       path: '/main',
       component: () => import('@/views/MainPage.vue'),
+      meta: { auth: true },
     },
     {
       path: '/add',
       component: () => import('@/views/PostAddPage.vue'),
+      meta: { auth: true },
     },
     {
       path: '/post/:id',
       component: () => import('@/views/PostEditPage.vue'),
+      meta: { auth: true },
     },
     {
       path: '*',
@@ -40,7 +43,9 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to);
+  if (to.meta.auth) {
+    console.log('인증이 필요합니다.');
+  }
   next();
 });
 
