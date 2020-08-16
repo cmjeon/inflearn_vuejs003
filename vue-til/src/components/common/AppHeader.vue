@@ -24,6 +24,7 @@
 
 <script>
 import { deleteCookie } from '@/utils/cookies';
+
 export default {
   computed: {
     isUserLogin() {
