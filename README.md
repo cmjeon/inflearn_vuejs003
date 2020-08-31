@@ -5,11 +5,7 @@
 - Vue.js 끝장내기 - 실무에 필요한 모든 것 강좌 학습자료
 - https://www.inflearn.com/course/vue-js-%EB%81%9D%EB%82%B4%EA%B8%B0-%EC%BA%A1%ED%8B%B4%ED%8C%90%EA%B5%90#
 
-목차
-
-[1. 강의 오리엔테이션](#강의-오리엔테이션)
-
-# 강의 오리엔테이션
+# 1. 강의 오리엔테이션
 1
 ## 제작할 애플리케이션 소개
 - 학습노트(TIL)페이지
@@ -23,8 +19,7 @@
 - swagger.io : API문서 생성 사이트
 - API 문서를 읽는 법을 배움
 
-# 개발환경 구성
-2
+# 2. 개발환경 구성
 ## 개발환경 소개
 - 깃헙 리포지토리 https://github.com/joshua1988/vue-til
 - 프로그램 설치 영상 https://www.inflearn.com/course/Age-of-Vuejs/lecture/21333?tab=curriculum
@@ -114,8 +109,7 @@ mongoose.connect(
 ## API 문서 보는 법과 사용하는 방법
 - ?
 
-# 프로젝트 생성 및 환경 구성
-3
+# 3. 프로젝트 생성 및 환경 구성
 ## Vue CLI로 프로젝트 생성
 - vue CLI 설치 https://cli.vuejs.org/guide/installation.html
 - node.js가 실행되고 있는 터미널 말고 새 터미널 생성
@@ -310,8 +304,8 @@ import Demo from '@/demo/basic/Demo';
 - Vue.js 스타일 가이드 문서 https://kr.vuejs.org/v2/style-guide/index.html
 - 필수와 강력추천 내용을 참조하는 것이 좋음
 
-# 라우터 & 컴포넌트 설계
-4
+# 4. 라우터 & 컴포넌트 설계
+
 ## 깃험 리포지토리 안내 및 클론
 - 수업 깃헙 리포지토리 안내 https://github.com/joshua1988/vue-til
 - $ git clone https://github.com/joshua1988/vue-til.git
@@ -326,9 +320,84 @@ import Demo from '@/demo/basic/Demo';
 	- 메인
 	- 추가 / 수정
 - vue-router 설치
-- $ npm i vue-router
+```
+$ npm i vue-router
+```
+- src/routes/index.js 생성
+- 내용입력
+```
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter); # 플러그인을 초기화하기위한 코드
+
+export default new VueRouter(); # VueRouter의 인스턴스를 생성하고 외부에서 쓸 수 있도록 함
+```
+- main.js에 router instance 추가
+```
+...
+import App from './App.vue';
+import router from '@/routes/index'; #
+...
+  render: h => h(App),
+  router
+```
 
 ## 페이지 컴포넌트 생성 및 연결
+- routes/index.js에 routes 속성 추가
+```
+export default new VueRouter({
+  routes: [
+    {
+      path: '/login',
+      component: LoginPage,
+    },
+    {
+      path: '/signup',
+      components: SignupPage,
+    }
+  ]
+})
+```
+- 현재는 LoginPage와 SignupPage가 없어서 에러가 발생
+- src/views/LoginPage.vue 생성
+```
+// vue + tab
+<template>
+  <div>
+    LoginPage
+  </div>
+</template>
+
+<script>
+  exports default {};
+</script>
+<style></style>
+```
+- src/vies/SignupPage.vue 생성
+```
+// vue + tab
+<template>
+  <div>
+    SignupPage
+  </div>
+</template>
+
+<script>
+  exports default {};
+</script>
+<style></style>
+```
+- routes/index.js 에 LoginPage, SignupPage 등록
+```
+...
+import VueRouter from 'vue-router';
+import LoginPage from '@/views/LoginPage.vue';
+import SignupPage from '@/views/SignupPage.vue';
+
+Vue.use(VueRouter);
+...
+```
 
 ## 라우팅 동작 확인
 
@@ -340,33 +409,31 @@ import Demo from '@/demo/basic/Demo';
 
 ## history mode 설정 및 싱글 페이지 애플리케이션 배포할 때 주의 사항
 
-# 회원 가입 페이지 개발
-5
+# 5. 회원 가입 페이지 개발
 ## 회원 가입 페이지 개발을 위한 준비
 
-# 실무 환경을 위한 프로젝트 설정
-6
-# 로그인 페이지 개발
-7
-# 로그인 상태 관리와 스토어
-8
-# 토큰을 이용한 API 인증 처리
-9
-# 학습 노트 데이터 조회
-10
-# 브라우저 저장소를 이용한 인증 값 관리
-11
-# 학습 노트 데이터 생성
-12
-# 중간 정리
-13
-# API 함수 모듈화
-14
-# 학습 노트 데이터 삭제
-15
-# 학습 노트 데이터 수정
-16
-# 데이터 포맷팅
-17
-# 라우터 심화
-18
+# 6. 실무 환경을 위한 프로젝트 설정
+
+# 7. 로그인 페이지 개발
+
+# 8. 로그인 상태 관리와 스토어
+
+# 9. 토큰을 이용한 API 인증 처리
+
+# 10. 학습 노트 데이터 조회
+
+# 11. 브라우저 저장소를 이용한 인증 값 관리
+
+# 12. 학습 노트 데이터 생성
+
+# 13. 중간 정리
+
+# 14. API 함수 모듈화
+
+# 15. 학습 노트 데이터 삭제
+
+# 16. 학습 노트 데이터 수정
+
+# 17. 데이터 포맷팅
+
+# 18. 라우터 심화
