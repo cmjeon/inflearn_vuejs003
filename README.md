@@ -398,8 +398,9 @@ import SignupPage from '@/views/SignupPage.vue';
 Vue.use(VueRouter);
 ...
 ```
-
 ## 라우팅 동작 확인
+- App.vue에 
+
 
 ## 코드 스플리팅 소개 및 적용
 
